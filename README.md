@@ -42,7 +42,7 @@ You have been tasked with analyzing 1Q2019 data to identify:
   - Outliers - Outliers where the z-score was 3 or more were removed from the tickets dataset. This reduced the impact of our findings while suggesting recommendations.
   - Memory constraints - Reduced the variable size to 32-bit instead of the default 64-bit to preserve memory as well as faster execution without compromising accuracy.
   - Incorrect datatypes - Addressed by updating the variable type.
-  - Duplicate data
+  - Duplicate data - Addressed by removing the duplicates.
 
 ### 2. Data Munging
 
@@ -52,8 +52,9 @@ You have been tasked with analyzing 1Q2019 data to identify:
   - Update datatype - To change type from 64-bit to 32-bit
   - Impute with mean - Update null values with mean
   - Create boxplot - To create a boxplot to check for outliers
-- Assumption:
+- Assumptions:
   - ITIN_FARE column contains single person fare and not the total fare for all passengers
+  - Entries in the flight table are one way flights
     
 ### 3. Visual Narrative
 
@@ -61,19 +62,19 @@ You have been tasked with analyzing 1Q2019 data to identify:
 
   LAX - SFO is the busiest with 4164 rount trips, LGA - ORD comes second with 3576, LAS - LAX comes third with 3254
   
-![Image](https://github.com/user-attachments/assets/8fcfdbb2-97cd-4d34-84bf-3f3711b762ba)
+![Image](https://github.com/user-attachments/assets/d2435623-e41b-401a-a32c-ac75f2953a92)
 
 - Top 10 most profitable routes in the quarter
   
   JFK - LAX is the most profitable route with net profit of $263m, ATL - LGA comes second with $164m, DCA - ORD comes third with $163m
   
-![Image](https://github.com/user-attachments/assets/9132b39a-7e91-4ad8-b3cb-a9f4222f91c8)
+![Image](https://github.com/user-attachments/assets/f23492b7-66a2-42e4-855c-ba8fcfd953e7)
 
 - Top 5 round trip routes that I recommend
 
-  This is based on the average profit per trip based on the analysis performed.
+  This is based on the average profit per trip derived from the analysis performed.
 
-![Image](https://github.com/user-attachments/assets/df6ec55a-4b3e-489f-a241-ef999d1e9069)
+![Image](https://github.com/user-attachments/assets/5930e3e5-ba57-4b88-8c8a-f5b0bdaf9f8b)
 
 - Number of round trip flights it will take to breakeven for the 5 recommended trip routes (cost of plane $90m)
   
@@ -83,11 +84,11 @@ You have been tasked with analyzing 1Q2019 data to identify:
   - EGE - JFK: 992
   - DEN - MOT: 1078
  
-![Image](https://github.com/user-attachments/assets/157f26df-c24e-49d7-a078-2151ff177435)
+![Image](https://github.com/user-attachments/assets/dd921cd0-7b86-4897-932b-bca5d4e3e99e)
 
 ### 4. Final Recommendation
 
-The criteria for the final recommendation is the average profit per flight based on the provided data. 
+The criteria for the final recommendation is based on the average profit per flight derived from the provided data. 
 
 #### Recommendations for the top 5 round trips:
   - MDT - PHL: Harrisburg, PA - Philadelphia, PA
